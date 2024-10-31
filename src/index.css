@@ -22,6 +22,7 @@ a {
   color: #ffffff;
   text-decoration: inherit;
 }
+
 a:hover {
   font-size: large;
 }
@@ -30,6 +31,67 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+
+  .chakra-petch-light {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  .chakra-petch-regular {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .chakra-petch-medium {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  .chakra-petch-semibold {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .chakra-petch-bold {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  .chakra-petch-light-italic {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  .chakra-petch-regular-italic {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .chakra-petch-medium-italic {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+
+  .chakra-petch-semibold-italic {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  .chakra-petch-bold-italic {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+
 }
 
 h1 {
@@ -46,21 +108,26 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-input{
-    border: 1px solid transparent;
-    padding: 0.2em 1.2em;
-    font-weight: 500;
-    color: #213547;
-    font-family: inherit;
-    background-color: #faf7f7;
-    cursor: pointer;
-    transition: border-color 0.25s;
-}button,input:hover {
+
+input {
+  border: 0px solid transparent;
+  padding: 0.2em 1.2em;
+  font-weight: 500;
+  color: #213547;
+  font-family: inherit;
+  background-color: #faf7f7;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button,
+input:hover {
   border-color: #6b72e9;
 }
+
 button:focus,
 button:focus-visible {
-  outline: 1px auto -webkit-focus-ring-color;
+  outline: 0px auto -webkit-focus-ring-color;
 }
 
 @media (prefers-color-scheme: light) {
@@ -68,9 +135,11 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }

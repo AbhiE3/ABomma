@@ -5,7 +5,7 @@ export default function StartPage() {
   const navigate = useNavigate();
 
   return (
-    <div className='flex items-center justify-center h-screen'>
+    <div className='chakra-petch-regular flex items-center justify-center h-screen'>
       <div className='relative group shadow-2xl border border-white-700 w-100 flex flex-col items-center justify-center p-10'>
         <h1 className="text-center text-2xl font-bold">Welcome to ABomma</h1>
         <p className='text-center pt-5'>&copy; 2024 ABHI</p>

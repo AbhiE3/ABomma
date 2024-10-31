@@ -3,23 +3,29 @@ import { useNavigate, useParams } from "react-router-dom";
 import { MovieContext } from "../../context";
 import React from 'react';
 
-const bgClasses = "bg-background text-foreground p-6 shadow-lg relative h-screen overflow-hidden";
+const bgClasses = "chakra-petch-bold bg-background text-foreground p-6 shadow-lg relative h-screen overflow-hidden";
 const textClasses = "text-muted-foreground text-accent-foreground mt-9";
 const buttonClasses = "bg-secondary text-secondary-foreground hover:bg-secondary/80 px-4 py-2 rounded-lg";
 
 export default function MovieDetails() {
   const { id } = useParams();
-  const { aboutMovie, loading, favList, setFavList, setId } = useContext(MovieContext);
-  const navigate = useNavigate();
+  const { aboutMovie, loading, favList, setFavList, setId, showNotification } = useContext(MovieContext);
 
   useEffect(() => {
-    if(id){
-    setId(id);
+    if (id) {
+      setId(id);
     }
   }, [id, setId]);
 
   function handleFavPage() {
-    setFavList([...favList, aboutMovie]);
+    const isAlreadyFavourite = favList.some((movie) => movie.id === aboutMovie.id);
+
+    if (!isAlreadyFavourite) {
+      setFavList([...favList, aboutMovie]);
+      showNotification("Added to favorites...!");
+    } else {
+      showNotification("This movie is already in your favorites...!");
+    }
   }
 
   if (loading) {
@@ -35,7 +41,7 @@ export default function MovieDetails() {
   return (
     <div className={bgClasses}>
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat rounded-none"
+        className="chakra-petch-regular absolute inset-0 bg-cover bg-center bg-no-repeat rounded-none"
         style={{
           backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)),url(https://image.tmdb.org/t/p/original${backdrop_path})`,
         }}
@@ -48,7 +54,7 @@ export default function MovieDetails() {
             {new Date(release_date).getFullYear()} | English | U/A 13+
           </p>
 
-          <p className="mt-2 w-1/2">{overview}</p>
+          { <p className="chakra-petch-light mt-2 w-1/2">{overview}</p>}
           <div className="mt-4">
             <span></span>
           </div>
